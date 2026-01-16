@@ -1,0 +1,830 @@
+/* ======================================
+    1. GLOBAL VARIABLES & BASE STYLES
+    ======================================
+*/
+:root {
+    /* Base Colors */
+    --gold: #D4AF37;           /* Main Gold Theme */
+    --gold-dark: #B8860B;      /* Button Hover/Highlight */
+    --text-dark: #4A4A4A;      /* Primary Text Color */
+    --background: #FFFFFF;     /* General Background */
+    --footer-dark: #2C3E50;    /* Footer and Dark Section Background */
+    
+    /* Section Colors */
+    --section-light: #F8F8F8;  /* Light Section Background (Testimonials) */
+    --section-dark: #2C3E50;   /* Dark Section Background (About Us) */
+    
+    /* Layout Variables */
+    --section-padding: 80px;
+    --container-width: 1200px;
+    --hero-height: 80vh;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Reusable Components */
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section-light {
+    background: var(--section-light);
+}
+
+.section-dark {
+    background: var(--section-dark);
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--gold-dark); 
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    text-align: center;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn-gold:hover {
+    background: var(--gold-dark);
+}
+
+
+/* ======================================
+    2. HEADER & NAVIGATION
+    ======================================
+*/
+header {
+    background: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 60px; 
+    gap: 10px; 
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    width: 200px;
+    color: var(--gold-dark); 
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2; 
+    
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-label {
+    font-size: 30px;
+    color: var(--text-dark);
+    cursor: pointer;
+    user-select: none;
+    display: none;
+}
+
+.nav-items-group {
+    display: flex;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-items li {
+    margin-left: 15px; 
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 6px 10px; 
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 16px; 
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold);
+}
+
+.nav-items-group .btn-gold {
+    margin-left: 20px;
+}
+
+
+/* ======================================
+    3. HOME SECTION (HERO & CARDS)
+    ======================================
+*/
+.hero {
+    /* PATH RESTORED: images/photo_2025-11-28_05-11-19.jpg */
+    background: url('/public/images/photo_2025-11-28_05-11-19.jpg') no-repeat center center/cover; 
+    height: var(--hero-height);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1; 
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: -1; 
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* Popular Destinations Cards */
+.cards {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.card {
+    flex: 1;
+    max-width: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: var(--background);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* ======================================
+    4. TESTIMONIALS (HOME)
+    ======================================
+*/
+.testimonial-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.testimonial-card {
+    flex: 1;
+    max-width: 350px;
+    background: var(--background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--gold);
+}
+
+.testimonial-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 5px 0;
+}
+
+.testimonial-title {
+    font-size: 14px;
+    color: var(--gold-dark);
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.testimonial-pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.testimonial-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.testimonial-dot.active {
+    background-color: var(--gold);
+}
+
+
+/* ======================================
+    5. PACKAGES SECTION
+    ======================================
+*/
+.packages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.package-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.package-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.package-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.package-title {
+    font-size: 22px;
+    color: var(--gold-dark);
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.package-duration {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.package-description {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.package-price {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+
+/* ======================================
+    6. ABOUT US SECTION
+    ======================================
+*/
+/* Mission/Vision Grid */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.icon-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.icon-box i {
+    /* Note: Font Awesome library is required for icons to display */
+    font-size: 40px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.icon-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.2);
+}
+
+/* Team Section */
+.team-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.team-card {
+    width: 250px;
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.team-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 12px 12px 0 0;
+}
+
+.team-card h3 {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin: 10px 0 5px 0;
+}
+
+.team-title {
+    font-size: 14px;
+    color: var(--gold-dark);
+    margin-bottom: 15px;
+}
+
+
+/* ======================================
+    7. FOOTER
+    ======================================
+*/
+footer {
+    background: var(--footer-dark);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .brand {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p, 
+.contact-info a {
+    color: #ccc;
+    margin: 5px 0;
+    display: block;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: var(--gold);
+}
+
+.footer-note {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+/* ======================================
+    8. RESPONSIVENESS (Mobile First)
+    ======================================
+*/
+@media (max-width: 992px) {
+    /* Navigation Toggle */
+    .menu-label {
+        display: block;
+    }
+
+    .nav-items-group {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        z-index: 40;
+        align-items: center;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-items li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .nav-items-group .btn-gold {
+        margin-top: 15px;
+        margin-left: 0;
+        width: calc(100% - 40px);
+        text-align: center;
+    }
+
+    .menu-toggle:checked ~ .nav-items-group {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+
+    .cards,
+    .testimonial-grid,
+    .team-container,
+    .packages-container,
+    .icon-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card,
+    .testimonial-card,
+    .package-card,
+    .team-card,
+    .icon-box {
+        max-width: 90%; 
+        width: 100%;
+    }
+}
+
+
+/* ======================================
+    9. GALLERY STYLES (New)
+    ======================================
+*/
+.gallery h1 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+}
+
+.gallery h1 span {
+    color: var(--gold); /* Use CSS variable for consistency */
+}
+
+/* Grid layout */
+.gallery-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Use a defined gap instead of a variable that wasn't defined */
+}
+
+/* Each gallery tile */
+.gallery-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 4/3;
+    background: #000;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image inside tile */
+.gallery-tile img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease, opacity .3s ease;
+}
+
+/* Overlay base (hidden text container) */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 35%, rgba(0, 0, 0, 0.45) 80%);
+    text-align: center;
+}
+
+/* Hide text initially */
+.gallery-overlay * {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+/* Show text on hover */
+.gallery-tile:hover .gallery-overlay * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Overlay text styles */
+.gallery-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #fff;
+}
+
+.gallery-desc {
+    color: #eee;
+    font-size: 14px;
+    margin: 0 0 12px 0;
+    max-width: 90%;
+}
+
+.gallery-cta {
+    background: var(--gold);
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Hover effects */
+.gallery-tile:hover img {
+    transform: scale(1.06);
+    opacity: 0.85;
+}
+
+.gallery-tile:hover .gallery-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.70) 90%);
+}
+
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-tile {
+        aspect-ratio: 16/10;
+    }
+}
+
+
+/* ======================================
+    10. CONTACT/BOOKING STYLES (New)
+    ======================================
+*/
+.contact-section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.info-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--gold-dark); /* Use variable */
+}
+
+.info-box p,
+.info-box a {
+    font-size: 16px;
+    color: var(--text-dark); /* Use variable */
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.info-box a:hover {
+    color: var(--gold); /* Use variable */
+}
+
+/* Custom list style for info box */
+.info-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-box ul li {
+    /* Custom gold checkmark */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23D4AF37"><path d="M20 6L9 17l-5-5"/></svg>') no-repeat left 6px;
+    background-size: 16px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: calc(100% - 24px); /* Account for padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form .btn-gold {
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
