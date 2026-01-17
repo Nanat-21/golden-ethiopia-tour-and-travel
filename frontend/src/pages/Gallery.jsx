@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Use Link for fast, no-reload navigation
 import "../styles/style.css";
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
-  const [filteredImages, setFilteredImages] = useState([]);
-  const [category, setCategory] = useState("All");
   const [loading, setLoading] = useState(true);
 
-  // --- FETCH DATA FROM DATABASE ---
+  // --- FETCH DATA FROM MONGODB ---
   useEffect(() => {
     const fetchGallery = async () => {
       try {
         const response = await fetch("http://localhost:5000/api/gallery");
         const data = await response.json();
         setImages(data);
-        setFilteredImages(data);
       } catch (error) {
         console.error("Error fetching gallery:", error);
       } finally {
@@ -24,57 +22,26 @@ const Gallery = () => {
     fetchGallery();
   }, []);
 
-  // --- FILTER LOGIC ---
-  useEffect(() => {
-    if (category === "All") {
-      setFilteredImages(images);
-    } else {
-      setFilteredImages(images.filter((img) => img.category === category));
-    }
-  }, [category, images]);
-
   if (loading) return <div className="loader">Loading Ethiopia in Pictures...</div>;
 
   return (
     <main>
-      <section className="section">
+      <section className="section gallery">
         <div className="container">
-          <h2 className="section-title">Photo Gallery</h2>
-          <p className="section-subtitle">Visual stories from the heart of Ethiopia.</p>
+          <h1>Our <span>Gallery</span></h1>
 
-          {/* Filter Buttons */}
-          <div className="filter-buttons" style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginBottom: '40px' }}>
-            {["All", "Nature", "History", "Culture"].map((cat) => (
-              <button 
-                key={cat}
-                className={category === cat ? "btn-gold" : "btn-outline"}
-                onClick={() => setCategory(cat)}
-                style={{ padding: '8px 20px', cursor: 'pointer', borderRadius: '5px' }}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Gallery Grid */}
-          <div className="packages-container"> {/* Reusing your grid CSS */}
-            {filteredImages.length > 0 ? (
-              filteredImages.map((img) => (
-                <div key={img._id} className="package-card gallery-card">
-                  <img 
-                    src={img.imageUrl} 
-                    alt={img.title} 
-                    style={{ height: '250px', width: '100%', objectFit: 'cover' }}
-                  />
-                  <div className="package-content" style={{ textAlign: 'center' }}>
-                    <h3 className="package-title">{img.title}</h3>
-                    <span className="package-duration">{img.category}</span>
-                  </div>
+          <div className="gallery-grid">
+            {images.map((img) => (
+              /* We use <Link> instead of <a> for Single Page App speed */
+              <Link key={img._id} className="gallery-tile" to="/packages">
+                <img src={img.imageUrl} alt={img.title} />
+                <div className="gallery-overlay">
+                  <h3 className="gallery-title">{img.title}</h3>
+                  <p className="gallery-desc">{img.description}</p>
+                  <span className="gallery-cta">Book Now</span>
                 </div>
-              ))
-            ) : (
-              <p style={{ textAlign: 'center', width: '100%' }}>No images found in this category.</p>
-            )}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
