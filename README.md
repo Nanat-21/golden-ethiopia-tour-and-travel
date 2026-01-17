@@ -53,10 +53,10 @@ Code snippet
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
 ```
-3. Installation & Running
+### 3. Installation & Running
 Open two separate terminals:
 
-Terminal 1 (Backend)
+* **Terminal 1 (Backend)**
 
 Bash
 
@@ -65,7 +65,7 @@ cd backend
 npm install
 node src/app.js
 ```
-Terminal 2 (Frontend)
+* **Terminal 2 (Frontend)**
 
 Bash
 
@@ -75,7 +75,9 @@ npm install
 npm start
 ```
 ---
-🛡️ Security Best Practices
-To follow industry security standards, the .env file containing sensitive database credentials has been excluded from this repository using .gitignore.
 
-© 2026 Golden Ethiopia Project Team
+## 🛡️ Security Best Practices
+To follow industry security standards, the `.env` file containing sensitive database credentials has been excluded from this repository using `.gitignore`.
+
+---
+> **© 2026 Golden Ethiopia Project Team**
