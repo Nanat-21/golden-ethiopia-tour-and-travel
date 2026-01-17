@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+ 
 const connectDB = async () => {
   try {
     // Attempt to connect using the URI from your .env file
