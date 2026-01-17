@@ -39,14 +39,14 @@ Golden-Ethiopia/
 ```
 ---
 🚀 Local Setup Instructions
-1. Prerequisites
-Node.js installed on your machine.
+## 🚀 Local Setup Instructions
 
-A MongoDB Atlas connection string.
+### 1. Prerequisites
+* **Node.js** - Ensure Node.js is installed on your machine.
+* **MongoDB Atlas** - You will need a valid MongoDB Atlas connection string.
 
-2. Database Configuration
-Navigate to the backend folder and create a .env file:
-
+### 2. Database Configuration
+Navigate to the `backend` folder and create a `.env` file:
 Code snippet
 
 ```text
