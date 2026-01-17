@@ -52,6 +52,7 @@ Code snippet
 ```text
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
+```
 3. Installation & Running
 Open two separate terminals:
 
@@ -63,6 +64,7 @@ Bash
 cd backend
 npm install
 node src/app.js
+```
 Terminal 2 (Frontend)
 
 Bash
@@ -71,6 +73,7 @@ Bash
 cd frontend
 npm install
 npm start
+```
 ---
 🛡️ Security Best Practices
 To follow industry security standards, the .env file containing sensitive database credentials has been excluded from this repository using .gitignore.
