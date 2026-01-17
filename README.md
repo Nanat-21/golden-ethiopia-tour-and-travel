@@ -1,6 +1,5 @@
 # 🇪🇹 Golden Ethiopia Tour and Travel
-
-### **A Professional MERN Stack Tourism Platform**
+**A Professional MERN Stack Tourism Platform**
 
 Golden Ethiopia is a full-stack web application designed to promote Ethiopian tourism. It features a modern, responsive user interface, a dynamic destination gallery, and a backend system integrated with MongoDB Atlas for real-time data management.
 
@@ -37,6 +36,8 @@ Golden-Ethiopia/
 │   │   └── pages/          # Home, Gallery, About, Contact, Packages
 ├── .gitignore              # Files ignored by Git (node_modules, .env)
 └── README.md               # Project documentation
+```
+---
 🚀 Local Setup Instructions
 1. Prerequisites
 Node.js installed on your machine.
@@ -48,6 +49,7 @@ Navigate to the backend folder and create a .env file:
 
 Code snippet
 
+```text
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
 3. Installation & Running
@@ -57,6 +59,7 @@ Terminal 1 (Backend)
 
 Bash
 
+```text
 cd backend
 npm install
 node src/app.js
@@ -64,9 +67,11 @@ Terminal 2 (Frontend)
 
 Bash
 
+```text
 cd frontend
 npm install
 npm start
+---
 🛡️ Security Best Practices
 To follow industry security standards, the .env file containing sensitive database credentials has been excluded from this repository using .gitignore.
 
