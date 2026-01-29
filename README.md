@@ -15,7 +15,7 @@ Golden Ethiopia is a full-stack web application designed to promote Ethiopian to
 
 ## 🛠️ Tech Stack
 * **Frontend:** React.js, CSS3, Lucide Icons
-* **Backend:** Node.js, Express.js
+* **Backend:** Node.js
 * **Database:** MongoDB Atlas (NoSQL Cloud)
 
 ---
