@@ -13,3 +13,15 @@ export const fetchPackages = async () => {
   const response = await fetch(`${API_URL}/packages`);
   return response.json();
 };
+
+// Fetch all images for the Gallery page
+export const fetchGallery = async () => {
+  const response = await fetch(`${API_URL}/gallery`);
+  return response.json();
+};
+
+// Fetch testimonials for the Home page
+export const fetchTestimonials = async () => {
+  const response = await fetch(`${API_URL}/testimonials`);
+  return response.json();
+};
