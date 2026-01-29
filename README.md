@@ -1,175 +1,83 @@
-🇪🇹 Golden Ethiopia Tour and Travel
+# 🇪🇹 Golden Ethiopia Tour and Travel
+**A Professional MERN Stack Tourism Platform**
 
-MERN Stack Tourism Web Application
+Golden Ethiopia is a full-stack web application designed to promote Ethiopian tourism. It features a modern, responsive user interface, a dynamic destination gallery, and a backend system integrated with MongoDB Atlas for real-time data management.
 
-1. Project Overview
+---
 
-Golden Ethiopia Tour and Travel is a web-based tourism platform developed to promote Ethiopia’s cultural, historical, and natural attractions.
-The system provides travelers with information about destinations, tour packages, galleries, and inquiry forms using a modern full-stack web architecture.
+## 🌟 Key Features
+* **Dynamic Content:** Testimonials and tour packages are fetched directly from MongoDB.
+* **Responsive Gallery:** An interactive showcase of Ethiopia's UNESCO World Heritage sites.
+* **Booking System:** Integrated contact and inquiry forms for travelers.
+* **Secure Architecture:** Professional-grade security using environment variables (`.env`).
 
-This project is developed as an academic MERN stack project and follows best practices in frontend–backend separation and secure configuration.
+---
 
-2. Objectives
+## 🛠️ Tech Stack
+* **Frontend:** React.js, CSS3, Lucide Icons
+* **Backend:** Node.js, Express.js
+* **Database:** MongoDB Atlas (NoSQL Cloud)
 
-To design a modern and responsive tourism website
+---
 
-To apply React for component-based frontend development
+## 📂 Project Structure
 
-To implement a backend API using Node.js and Express
-
-To integrate MongoDB Atlas for data storage
-
-To follow secure development practices using environment variables
-
-3. Key Features
-
-Responsive user interface built with React and CSS
-
-Multi-page navigation using React Router
-
-Dynamic pages: Home, About, Packages, Gallery, Contact
-
-Backend API structure ready for expansion
-
-MongoDB Atlas integration for future dynamic content
-
-Secure handling of sensitive credentials using .env
-
-4. Technologies Used
-Frontend
-
-React.js
-
-React Router DOM
-
-CSS3
-
-Lucide Icons / Font Awesome
-
-Backend
-
-Node.js
-
-Express.js
-
-Database
-
-MongoDB Atlas (Cloud NoSQL Database)
-
-Tools
-
-Git & GitHub
-
-npm
-
-VS Code
-
-5. Project Structure
+```text
 Golden-Ethiopia/
-│
-├── backend/
+├── backend/                # Server-side logic (Node.js)
 │   ├── src/
-│   │   ├── config/        # Database connection setup
-│   │   ├── models/        # MongoDB schemas
-│   │   ├── routes/        # API routes
-│   │   └── app.js         # Express app entry point
-│   ├── .env               # Environment variables (not committed)
-│   └── package.json
-│
-├── frontend/
-│   ├── public/
-│   │   └── images/        # Static images
+│   │   ├── config/         # Database connection configuration
+│   │   ├── models/         # MongoDB Schemas
+│   │   └── routes/         # API endpoints
+│   └── .env                # Private credentials (LOCAL ONLY)
+├── frontend/               # Client-side UI (React.js)
 │   ├── src/
-│   │   ├── components/    # Header, Footer
-│   │   ├── pages/         # Home, About, Packages, Gallery, Contact
-│   │   ├── styles/        # CSS files
-│   │   ├── App.jsx        # Routing and layout
-│   │   └── index.js       # React entry point
-│   └── package.json
-│
-├── .gitignore
-└── README.md
+│   │   ├── components/     # UI Header, Footer
+│   │   └── pages/          # Home, Gallery, About, Contact, Packages
+├── .gitignore              # Files ignored by Git (node_modules, .env)
+└── README.md               # Project documentation
+```
+---
+🚀 Local Setup Instructions
+## 🚀 Local Setup Instructions
 
-6. Installation and Setup
-6.1 Prerequisites
+### 1. Prerequisites
+* **Node.js** - Ensure Node.js is installed on your machine.
+* **MongoDB Atlas** - You will need a valid MongoDB Atlas connection string.
 
-Node.js (v16 or later)
+### 2. Database Configuration
+Navigate to the `backend` folder and create a `.env` file:
+Code snippet
 
-npm
-
-MongoDB Atlas account
-
-6.2 Backend Setup
-
-Navigate to the backend directory:
-
-cd backend
-
-
-Install dependencies:
-
-npm install
-
-
-Create a .env file inside the backend folder:
-
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/golden_ethiopia
+```text
+MONGO_URI=your_mongodb_connection_string
 PORT=5000
+```
+### 3. Installation & Running
+Open two separate terminals:
 
+* **Terminal 1 (Backend)**
 
-Start the backend server:
+Bash
 
-node src/app.js
-
-6.3 Frontend Setup
-
-Navigate to the frontend directory:
-
-cd frontend
-
-
-Install dependencies:
-
+```text
+cd backend
 npm install
+node src/app.js
+```
+* **Terminal 2 (Frontend)**
 
+Bash
 
-Start the React development server:
-
+```text
+cd frontend
+npm install
 npm start
+```
+---
 
+## 🛡️ Security Best Practices
+To follow industry security standards, the `.env` file containing sensitive database credentials has been excluded from this repository using `.gitignore`.
 
-The application will run at:
-
-http://localhost:3000
-
-7. Security Considerations
-
-Sensitive information such as database credentials is stored in .env
-
-The .env file is excluded from version control using .gitignore
-
-This follows industry-standard security practices
-
-8. Future Enhancements
-
-Dynamic data fetching from MongoDB
-
-User authentication and admin dashboard
-
-Online booking and payment integration
-
-Image upload and management
-
-Deployment to cloud platforms (Vercel / Render)
-
-9. Authors
-
-Golden Ethiopia Project Team
-Software Engineering Students
-Addis Ababa University
-
-10. License
-
-This project is developed for academic purposes only.
-
-© 2026 Golden Ethiopia Tour and Travel
+---
+> **© 2026 Golden Ethiopia Project Team**
