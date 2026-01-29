@@ -24,7 +24,8 @@ Golden Ethiopia is a full-stack web application designed to promote Ethiopian to
 
 ```text
 Golden-Ethiopia/
-├── backend/                # Server-side logic (Node.js)
+│
+├── backend/
 │   ├── src/
 │   │   ├── config/         # Database connection configuration
 │   │   ├── models/         # MongoDB Schemas
@@ -73,11 +74,40 @@ Bash
 cd frontend
 npm install
 npm start
-```
----
 
-## 🛡️ Security Best Practices
-To follow industry security standards, the `.env` file containing sensitive database credentials has been excluded from this repository using `.gitignore`.
 
----
-> **© 2026 Golden Ethiopia Project Team**
+The application will run at:
+
+http://localhost:3000
+
+7. Security Considerations
+
+Sensitive information such as database credentials is stored in .env
+
+The .env file is excluded from version control using .gitignore
+
+This follows industry-standard security practices
+
+8. Future Enhancements
+
+Dynamic data fetching from MongoDB
+
+User authentication and admin dashboard
+
+Online booking and payment integration
+
+Image upload and management
+
+Deployment to cloud platforms (Vercel / Render)
+
+9. Authors
+
+Golden Ethiopia Project Team
+Software Engineering Students
+Addis Ababa University
+
+10. License
+
+This project is developed for academic purposes only.
+
+© 2026 Golden Ethiopia Tour and Travel
